@@ -44,7 +44,7 @@ class ChatController extends Controller
     {
         Log::debug($request);
         Log::debug($to);
-        broadcast(new GreetingSent($to));
+        broadcast(new GreetingSent($to, '12345'));
 
         // return "Greeting {$user->name} from {$request->user()->name}";
     }

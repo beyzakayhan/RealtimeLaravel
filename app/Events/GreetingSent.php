@@ -25,9 +25,10 @@ class GreetingSent implements ShouldBroadcast
      * @param mixed $message
      * @param mixed $user
      */
-    public function __construct($user)
+    public function __construct($user, $message)
     {
         $this->user = $user;
+        $this->message = $message;
     }
 
     /**
@@ -38,7 +39,6 @@ class GreetingSent implements ShouldBroadcast
     public function broadcastOn()
     {
         // \Log::debug($this->user);
-        dd($this->user);
 
         return new PrivateChannel("chat.greet.{$this->user}");
     }
