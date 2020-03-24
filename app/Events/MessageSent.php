@@ -23,10 +23,10 @@ class MessageSent implements ShouldBroadcast
      * Create a new event instance.
      *
      * @param mixed $message
+     * @param mixed $user
      */
-    public function __construct(User $user, $message)
+    public function __construct($message)
     {
-        $this->user = $user;
         $this->message = $message;
     }
 

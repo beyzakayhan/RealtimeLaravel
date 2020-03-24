@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('users', 'Api\UserController');
 Route::post('/chat/greet/{user}', 'ChatController@greetReceived');
+Route::post('/chat/message', 'ChatController@messageReceived');

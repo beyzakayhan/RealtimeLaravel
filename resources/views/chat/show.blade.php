@@ -83,7 +83,7 @@
         })
         .listen('MessageSent', (e) => {
             let element = document.createElement('li');
-            element.innerText = e.user.name + ': ' + e.message;
+            element.innerText = e.message;
             messagesElement.appendChild(element);
         });
 </script>
@@ -103,16 +103,10 @@
 <script>
     function greetUser(id)
     {
-    const messageElement = document.getElementById('message');
-    const sendElement = document.getElementById('send');
-    sendElement.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.axios.post('/chat/greet/' + id, {
-            message: messageElement.value,
+        window.axios.post('/chat/greet/' + id,{
+            message:'selam',
+            from: '{{ auth()->user()->id }}',
         });
-        messageElement.value = '';
-    });
-       
     }
 </script>
 
