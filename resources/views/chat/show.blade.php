@@ -83,7 +83,7 @@
         })
         .listen('MessageSent', (e) => {
             let element = document.createElement('li');
-            element.innerText = e.message;
+            element.innerText =e.message;
             messagesElement.appendChild(element);
         });
 </script>
@@ -95,6 +95,7 @@
         e.preventDefault();
         window.axios.post('/chat/message', {
             message: messageElement.value,
+      
         });
         messageElement.value = '';
     });

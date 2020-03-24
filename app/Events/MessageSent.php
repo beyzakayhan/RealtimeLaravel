@@ -24,6 +24,7 @@ class MessageSent implements ShouldBroadcast
      *
      * @param mixed $message
      * @param mixed $user
+     * @param mixed $from
      */
     public function __construct($message)
     {

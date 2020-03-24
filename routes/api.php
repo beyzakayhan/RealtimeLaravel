@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('users', 'Api\UserController');
 Route::post('/chat/greet/{user}', 'ChatController@greetReceived');
-Route::post('/chat/message', 'ChatController@messageReceived');
+Route::get('/chat/greet/{from}/{to}', 'ChatController@fetchMessages');
+Route::get('/chat/message', 'ChatController@fetchAllMessages');
